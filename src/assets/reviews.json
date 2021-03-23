@@ -1,0 +1,27 @@
+[
+
+  {
+    "reviewerId": 1001,
+    "reviewerName": "Ananya",
+    "reviewerAddress": "Varanasi",
+    "reviewerDescription": "html works for web development",
+    "reviewerImage": "../assets/emp1.jpg"
+  },
+
+  {
+    "reviewerId": 1004,
+    "reviewerName": "Anajali",
+    "reviewerAddress": "Maharastra",
+    "reviewerDescription": "json works",
+    "reviewerImage": "../assets/emp2.jpg"
+
+  },
+  {
+    "reviewerId": 1002,
+    "reviewerName": "Anusha",
+    "reviewerAddress": "Indore",
+    "reviewerDescription": "angular traineer",
+    "reviewerImage": "../assets/emp4.jpg"
+
+  }
+]

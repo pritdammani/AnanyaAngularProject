@@ -1,0 +1,96 @@
+<!--<p>reviews works!</p>-->
+<app-header></app-header>
+<html>
+<head>
+</head>
+<body>
+  <section>
+<!--for demo wrap-->
+
+
+
+<h2>Review Details</h2>
+<table>
+  <tr>
+    <td>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchedKeyword">
+      </div>
+      <br />
+    </td>
+    <td>
+      <label>Sort : </label>
+      <select [(ngModel)]='SortbyParam'>
+        <option value="reviewerId">Reviewer Id</option>
+        <option value="reviewerName">Reviewer Name</option>
+        <option value="reviewerAddress">Reviewer Address</option>
+        <option value="reviewerDescription">Reviewer Description</option>
+        <option value="reviewerImage">Reviewer Image</option>
+      </select>
+    </td> </tr>
+</table>
+<div class="tbl-header">
+  <table cellpadding="0" cellspacing="0" border="0">
+  <thead>
+          <tr appSecondDir>
+        <th>Reviewer Id</th>
+        <th>Reviewer Name</th>
+        <th>Reviewer Address</th>
+        <th>Reviwer Description</th>
+        <th>Reviewer Image</th>
+      </tr>
+      <!--<tr *ngFor='let reviewers of reviewer'>
+        <td>-->
+
+
+          </thead>
+              </table>
+          </div>
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+
+              <tr *ngFor="let reviewers of (reviewer) | search: searchedKeyword:'reviewerName'|sort:SortbyParam">
+                <td appMycolor>
+                  <b>
+                    {{reviewers.reviewerId}}
+                  </b>
+
+                </td>
+                <td appMycolor>
+                  <b>
+                    {{reviewers.reviewerName}}
+                  </b><b></b>
+                </td>
+                <td appMycolor>
+                  <b>
+                    {{reviewers.reviewerAddress}}
+                  </b>
+                </td>
+                <td appMycolor>
+                  <b>
+                    {{reviewers.reviewerDescription}}
+                  </b>
+                </td>
+                <td appMycolor>
+                  <img [src]='reviewers.reviewerImage' alt="" border=3 height=100 width=100 />
+                </td>
+                <td>
+                  <button (click)='removeData(reviewers.reviewerId)'>Remove</button>
+                </td>
+              </tr>
+    </table>
+
+
+</div>
+
+    </section>
+    <div class="div2" *ngIf="!reviewer.length">
+      <h1 align="center">Reviewer is not there</h1>
+    </div>
+     
+    <div class="maded">
+
+    </div>
+    </body>
+    </html>
+<app-footer></app-footer>

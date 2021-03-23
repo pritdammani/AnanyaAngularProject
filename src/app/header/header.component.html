@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  Brand/logo
+<a class="navbar-brand" href="#">
+  <img src="../assets/anan.jpg" alt="logo" style="width:40px;">
+</a>
+  Links
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <a class="navbar-brand" routerLink='/Home' routerLinkActive='active'>Home</a>
+    <!--<a class="navbar-brand" routerLink='/home' routerLinkActive='active'> Home {'Home'|translate}}</a>-->
+
+  </li>
+
+  <li class="nav-item">
+    <a class="navbar-brand" routerLink='/Reviews' routerLinkActive='active'>Reviews</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="navbar-brand" routerLink='/Technologies' routerLinkActive='active'>Technologies</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="navbar-brand" routerLink='/TdRegistration' routerLinkActive='active'>TdRegistration</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="navbar-brand" routerLink='/MdRegistration' routerLinkActive='active'>MdRegistration</a>
+
+  </li>
+
+  <!--<li>
+    <select #locale (change)='changeLocale(locale.value)'>
+      <option value='en'>English</option>
+      <option value='fr'>French</option>
+      <option value='hindi'>Hindi</option>
+    </select>
+
+    <p>{{'hello' | translate }}</p>
+  </li>-->
+
+  <li class="nav-item">
+    <a class="btn btn-danger" routerLink='/Login' routerLinkActive='active'>Logout</a>
+  </li>
+
+</ul>
+</nav>

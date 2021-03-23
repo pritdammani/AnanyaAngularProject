@@ -1,0 +1,95 @@
+<!--<p>td-registration works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>-->
+<app-header></app-header>
+
+<div class='container'>
+  <h1 style="background-color:dodgerblue; text-align:center"> **Registration Form**</h1>
+  <hr />
+  <form #userForm='ngForm' (ngSubmit)='submitData(userForm.value)'>
+
+    <div class='form-group'>
+      <label>Name :</label>
+      <input type='text' class='form-control' name='name' #nameRef='ngModel'
+             ngModel required minlength='5' maxlength='12' pattern="[a-z]+">
+
+
+
+      <div *ngIf='nameRef.errors && (nameRef.dirty || nameRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!nameRef.errors.required'>Please enter Name</div>
+        <div [hidden]='!nameRef.errors.minlength'>Please enter atleast 5 characters</div>
+        <div [hidden]='!nameRef.errors.pattern'>Please enter valid name</div>
+      </div>
+
+      <br />
+    </div>
+    <label>Email Id:</label>
+    <input type="email" class="form-control" name="email" #emailRef='ngModel' ngModel
+           required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+    <div *ngIf='emailRef.errors && (emailRef.dirty || emailRef.touched)' class='alert alert-danger'>
+      <div [hidden]='!emailRef.errors.required'>Please Enter Email</div>
+      <div [hidden]='!emailRef.errors.pattern'>Please Enter Valid email</div>
+    </div>
+    <br />
+
+    <label>Gender</label>
+
+    <div class="custom-control custom-radio">
+      <input id="male" type="radio" class="custom-control-input" value="male" name="gender" ngModel>
+      <label class="custom-control-label" for="male">Male</label>
+
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="female" type="radio" class="custom-control-input" value="female" name="gender" ngModel>
+      <label class="custom-control-label" for="female">Female</label>
+    </div>
+
+    <br />
+
+    <label>Address :</label>
+    <div ngModelGroup="Address">
+      <br />
+      <label>City </label>
+      <input type="text" class="form-control" name="city" #cityRef="ngModel" ngModel
+             required minlength="3" maxlength="15" pattern="[a-z]+" />
+      <div *ngIf='cityRef.errors && (cityRef.dirty || cityRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!cityRef.errors.required'>Please Enter City</div>
+        <div [hidden]='!cityRef.errors.pattern'>Please Enter Valid City</div>
+        <div [hidden]='!cityRef.errors.minlength'>Please Enter atleast 3 characters</div>
+      </div>
+
+
+      <br />
+      <label>State </label>
+      <input type="text" class="form-control" name="state" #stateRef="ngModel" ngModel
+             required minlength="2" maxlength="15" pattern="[A-Z]+" />
+      <div *ngIf='stateRef.errors && (stateRef.dirty || stateRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!stateRef.errors.required'>Please Enter State</div>
+        <div [hidden]='!stateRef.errors.pattern'>Please Enter Valid State</div>
+        <div [hidden]='!stateRef.errors.minlength'>Please Enter atleast 3 characters</div>
+      </div>
+
+      <br />
+
+      <label>Postal Code </label>
+      <input type='number' class="form-control" name="postalcode" #postalcodeRef="ngModel" ngModel
+             required minlength="6" maxlength="10" />
+      <div *ngIf='postalcodeRef.errors && (postalcodeRef.dirty || postalcodeRef.touched)' class='alert alert-danger'>
+        <div [hidden]='!postalcodeRef.errors.required'>Please Enter PostalCode</div>
+        <div [hidden]='!postalcodeRef.errors.minlength'>Please Enter atleast 6 characters</div>
+      </div>
+    </div>
+    <br />
+    <button [disabled]='!userForm.form.valid' type='submit' class='btn btn-success'>Submit</button>
+  </form>
+</div>
+<!--</body>
+</html>-->
+<app-footer></app-footer>

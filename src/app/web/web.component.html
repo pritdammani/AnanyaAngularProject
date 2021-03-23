@@ -1,0 +1,41 @@
+<!--<p>web works!</p>-->
+
+<h2>Course Details</h2>
+<hr />
+<table>
+  <tr>
+    <th>Course Id</th>
+    <th>Course Name</th>
+    <th>Course Price</th>
+    <th>Course Description</th>
+    <th>Traineer Image</th>
+  </tr>
+  <tr *ngFor='let courses of course'>
+    <td>
+      <b>
+        {{courses.courseId}}
+      </b>
+
+    </td>
+    <td>
+      <b>
+        {{courses.courseName}}
+      </b><b></b>
+    </td>
+    <td>
+      <b>
+        {{courses.coursePrice}}
+      </b>
+    </td>
+    <td>
+      <b>
+        {{courses.courseDescription}}
+      </b>
+    </td>
+    <td>
+      <img [src]='courses.courseImage' alt="" border=3 height=100 width=100 />
+    </td>
+  </tr>
+</table>
+
+   
